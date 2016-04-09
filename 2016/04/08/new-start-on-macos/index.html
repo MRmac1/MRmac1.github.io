@@ -1,0 +1,711 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mac,environment," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="前提概要：升级了下系统，开不了机。拿去苹果店，全盘格式化了系统，啥都木有了，勉强恢复过来一些个人资料。哭…下面对系统的恢复过程做下总结，方便下次重(千)装(万)系(不)统(要)时候查看。
+
+个人常用资料总结
+IED类：pycharm，webstorm，phpstorm，xcode(其中的commandLine工具很重要)
+设计类：sketch(UI交互设计)，sketch Toolbox(ske">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac重装纪要">
+<meta property="og:url" content="http://yoursite.com/2016/04/08/new-start-on-macos/index.html">
+<meta property="og:site_name" content="Small Beginning">
+<meta property="og:description" content="前提概要：升级了下系统，开不了机。拿去苹果店，全盘格式化了系统，啥都木有了，勉强恢复过来一些个人资料。哭…下面对系统的恢复过程做下总结，方便下次重(千)装(万)系(不)统(要)时候查看。
+
+个人常用资料总结
+IED类：pycharm，webstorm，phpstorm，xcode(其中的commandLine工具很重要)
+设计类：sketch(UI交互设计)，sketch Toolbox(ske">
+<meta property="og:updated_time" content="2016-04-09T07:18:25.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mac重装纪要">
+<meta name="twitter:description" content="前提概要：升级了下系统，开不了机。拿去苹果店，全盘格式化了系统，啥都木有了，勉强恢复过来一些个人资料。哭…下面对系统的恢复过程做下总结，方便下次重(千)装(万)系(不)统(要)时候查看。
+
+个人常用资料总结
+IED类：pycharm，webstorm，phpstorm，xcode(其中的commandLine工具很重要)
+设计类：sketch(UI交互设计)，sketch Toolbox(ske">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> mac重装纪要 | Small Beginning </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Small Beginning</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                mac重装纪要
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-08T16:14:13+08:00" content="2016-04-08">
+              2016-04-08
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/environment/" itemprop="url" rel="index">
+                    <span itemprop="name">environment</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>前提概要：升级了下系统，开不了机。拿去苹果店，全盘格式化了系统，啥都木有了，勉强恢复过来一些个人资料。哭…<br>下面对系统的恢复过程做下总结，方便下次重(千)装(万)系(不)统(要)时候查看。</p>
+</blockquote>
+<h4 id="个人常用资料总结"><a href="#个人常用资料总结" class="headerlink" title="个人常用资料总结"></a>个人常用资料总结</h4><ul>
+<li>IED类：pycharm，webstorm，phpstorm，xcode(其中的commandLine工具很重要)</li>
+<li>设计类：sketch(UI交互设计)，sketch Toolbox(sketch的插件管理)，sip(拾色器)，principle(动画设计)，mindNode(思维导图)</li>
+<li>数据工具：Robomongo(mongodb查看)，sequel pro，DataGrip</li>
+<li>其他：Flux(屏幕色差自动调节，预防近视)</li>
+</ul>
+<hr>
+<a id="more"></a>
+<p><strong><em>常见工具重新安装完成之后只是完成了长征的第一步。下面开始系统环境的恢复工作。</em></strong></p>
+<p>要想有个好的开发效率，有个好的终端环境是必不可少的，而且很多系统环境的安装需要依靠终端。</p>
+<h4 id="终端环境恢复"><a href="#终端环境恢复" class="headerlink" title="终端环境恢复"></a>终端环境恢复</h4><ul>
+<li>homebrew 安装</li>
+<li>oh-my-zsh 安装</li>
+</ul>
+<h5 id="php环境恢复"><a href="#php环境恢复" class="headerlink" title="php环境恢复"></a>php环境恢复</h5><p>php环境搭建包括 php+mysql+Nginx+php-fpm，其中php和php-fpm是系统自带的，所以我们只需要配置好就行了。</p>
+<ul>
+<li><p>nginx安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install nginx</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>mysql 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew install mysql</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>或者去mysql官网下载dmg文件，用dmg文件安装的时候注意最后一步mysql会给你默认的随机密码，一定要记住。修改密码时候进入mysql终端的命令行，用随机密码登录，输入set password(‘123123’)即可。</p>
+<ul>
+<li>至于php-fpm和nginx配置问题可以参考<a href="http://my.oschina.net/chen0dgax/blog/190161?fromerr=Z3PK5tEN" target="_blank" rel="external">这篇文章</a>，常用命令是sudo nginx; sudo nginx -s reload; sudo php-fpm</li>
+</ul>
+<h5 id="nodejs环境恢复"><a href="#nodejs环境恢复" class="headerlink" title="nodejs环境恢复"></a>nodejs环境恢复</h5><p>nodejs环境安装就比较简单，直接去官网下载，安装好之后就有node和npm环境了。下面是几个常用的npm的工具</p>
+<ul>
+<li>hexo nodejs的博客管理工具，使用hexo搭建的博客非常便于管理</li>
+<li>phantomjs 识别那些页面上使用js生成的文本，目前我是搭配pyspider使用</li>
+<li>supervisor nodejs服务器开发的利器</li>
+<li>pm2 生产环境版本的nodejs部署工具，监控很完全</li>
+</ul>
+<h5 id="Python环境恢复"><a href="#Python环境恢复" class="headerlink" title="Python环境恢复"></a>Python环境恢复</h5><p>Python环境mac自带的就有，2.6版本和2.7版本。3.x版本的就暂时不掺和了。</p>
+<ul>
+<li><p>安装Python的包管理工具pip</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo easy_install pip</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装pyspider</p>
+</li>
+</ul>
+<h5 id="虚拟开发环境的配置"><a href="#虚拟开发环境的配置" class="headerlink" title="虚拟开发环境的配置"></a>虚拟开发环境的配置</h5><p>使用虚拟开发环境主要是有些环境不想装在本机，而现成集成好的开发环境使用起来又非常方便。虚拟技术我主要使用了vagrant和docker</p>
+<ul>
+<li>安装vagrant dmg</li>
+<li>安装virtual box</li>
+<li>安装docker(目前还未安装)</li>
+</ul>
+
+      
+    </div>
+    
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/WechatPay.jpg" alt="Tracy zhou WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
+      </div>
+    
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mac/" rel="tag">#mac</a>
+          
+            <a href="/tags/environment/" rel="tag">#environment</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/08/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/09/webSpider/" rel="prev" title="爬虫乱谈">
+                爬虫乱谈 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.png"
+               alt="Tracy zhou" />
+          <p class="site-author-name" itemprop="name">Tracy zhou</p>
+          <p class="site-description motion-element" itemprop="description">一个会写代码的历史爱好者的自言自语</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mrmac1" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/2451156942" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/tracyzhou-74" target="_blank">
+                  
+                    <i class="fa fa-television"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#个人常用资料总结"><span class="nav-number">1.</span> <span class="nav-text">个人常用资料总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端环境恢复"><span class="nav-number">2.</span> <span class="nav-text">终端环境恢复</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#php环境恢复"><span class="nav-number">2.1.</span> <span class="nav-text">php环境恢复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#nodejs环境恢复"><span class="nav-number">2.2.</span> <span class="nav-text">nodejs环境恢复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Python环境恢复"><span class="nav-number">2.3.</span> <span class="nav-text">Python环境恢复</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#虚拟开发环境的配置"><span class="nav-number">2.4.</span> <span class="nav-text">虚拟开发环境的配置</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tracy zhou</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
