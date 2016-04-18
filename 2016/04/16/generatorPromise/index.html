@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://mrmac1.github.io/images/generatorPromise/NodeResult.png">
 <meta property="og:image" content="http://mrmac1.github.io/images/generatorPromise/NodefirstRecord.png">
 <meta property="og:image" content="http://mrmac1.github.io/images/generatorPromise/NodelastRecord.png">
-<meta property="og:updated_time" content="2016-04-18T06:23:25.000Z">
+<meta property="og:updated_time" content="2016-04-18T06:44:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从写一个Node爬虫开始讲用同步的方式写异步代码">
 <meta name="twitter:description" content="一般来说爬虫程序应该算是同步依赖性比较强的程序了,这篇文章就从爬取一个网站开始讲起吧,我个人对古代诗文比较感兴趣,就选取了古诗词网.">
@@ -195,16 +195,6 @@
               <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
             
             分类
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-about">
-          <a href="/about" rel="section">
-            
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
-            
-            关于
           </a>
         </li>
       
@@ -374,9 +364,9 @@
 <p>下面对上面的代码进行一下简单的分析</p>
 <ol>
 <li>crawlJob函数定义方式为function* crawlJob(),这是generator函数的定义方式,特点是可以在内部使用yield关键字,这是异步编程同步化的重要核心</li>
-<li>首先需要获取到pages的值,我们是这么写的let pages = yield getPages(seedUrl),是不是特别简单?只是多了一个yield关键字.我们再看看getPages<br>函数里是怎么定义的.getPages函数接收一个url输入,然后返回的是一个Promise对象(为什么是promise对象?这个接下来会说明的).其状态是通过调用reject<br>或者resolve方式表明是成功或者失败的.</li>
-<li>获取到了pages之后,我们需要对其进行循环,这个时候再直接使用 let detailUrls = yield crawlListPage(listUrl) 就不可以了,当然第一个调用会成功.<br>这是为什么呢? 循环pages变量,我们需要的是对一系列的列表页进行爬取,而像上面一样的写法会导致crawlListPage的promise第一次执行就成功了,第二次再调用的时候<br>因为promise指向完成,所以调用也不会产生效果,我们要改写一下这种写法,就使用let listPromises = listUrls.map(crawlListPage),就得到了一系列的promise函数<br>再用for of进行循环,就不会导致上面的情况了</li>
-<li>整体流程就是通过上面讲述的进行的,最后说明下为什么在crawlJob里调用的函数返回的都是promise对象.因为generator函数里的yield是起到一个暂停现场的作用<br>若是想要再恢复现场,继续执行generator下面的语句,就得调用函数的next方法,但这无疑会使代码的流程复杂化.所以代码里使用了co模块,co模块要求调用函数<br>的返回值必须为promise函数或者Thunk函数,这样就可以保证generator函数的不断执行了</li>
+<li>首先需要获取到pages的值,我们是这么写的let pages = yield getPages(seedUrl),是不是特别简单?只是多了一个yield关键字.我们再看看getPages函数里是怎么定义的.getPages函数接收一个url输入,然后返回的是一个Promise对象(为什么是promise对象?这个接下来会说明的).其状态是通过调用reject或者resolve方式表明是成功或者失败的.</li>
+<li>获取到了pages之后,我们需要对其进行循环,这个时候再直接使用 let detailUrls = yield crawlListPage(listUrl) 就不可以了,当然第一个调用会成功.这是为什么呢? 循环pages变量,我们需要的是对一系列的列表页进行爬取,而像上面一样的写法会导致crawlListPage的promise第一次执行就成功了,第二次再调用的时候因为promise指向完成,所以调用也不会产生效果,我们要改写一下这种写法,就使用let listPromises = listUrls.map(crawlListPage),就得到了一系列的promise函数再用for of进行循环,就不会导致上面的情况了</li>
+<li>整体流程就是通过上面讲述的进行的,最后说明下为什么在crawlJob里调用的函数返回的都是promise对象.因为generator函数里的yield是起到一个暂停现场的作用若是想要再恢复现场,继续执行generator下面的语句,就得调用函数的next方法,但这无疑会使代码的流程复杂化.所以代码里使用了co模块,co模块要求调用函数的返回值必须为promise函数或者Thunk函数,这样就可以保证generator函数的不断执行了</li>
 </ol>
 <h4 id="来看看执行效率"><a href="#来看看执行效率" class="headerlink" title="来看看执行效率"></a>来看看执行效率</h4><p>代码的性能和效率又是很大的一个方向了,我使用PHP和NodeJS写了同样功能的代码,只以爬虫最重要的指标,准确率和时间作为判断依据</p>
 <h5 id="PHP代码"><a href="#PHP代码" class="headerlink" title="PHP代码"></a>PHP代码</h5><img src="/images/generatorPromise/PHPResult.png" width="400" height="400">
@@ -387,12 +377,15 @@
 <img src="/images/generatorPromise/PHPlastRecord.png" width="500" height="500">
 <p>PHP爬取122条记录耗时 <strong>7分19秒</strong></p>
 <h5 id="Node代码"><a href="#Node代码" class="headerlink" title="Node代码"></a>Node代码</h5><img src="/images/generatorPromise/NodeResult.png" width="500" height="500">
-<p>抓取记录页为122条,准确性没有问题</p>
+<p>抓取记录页也为122条,准确性没有问题</p>
 <p>第一条记录时间</p>
 <img src="/images/generatorPromise/NodefirstRecord.png" width="500" height="500">
 <p>最后一条记录时间</p>
 <img src="/images/generatorPromise/NodelastRecord.png" width="500" height="500">
 <p>Node爬取122条记录耗时 <strong>9秒</strong></p>
+<h4 id="代码地址"><a href="#代码地址" class="headerlink" title="代码地址"></a>代码地址</h4><p>PHP代码 : <a href="https://github.com/MRmac1/gushiwenByPHP" target="_blank" rel="external">https://github.com/MRmac1/gushiwenByPHP</a></p>
+<p>Node代码 : <a href="https://github.com/MRmac1/gushiwenByNode" target="_blank" rel="external">https://github.com/MRmac1/gushiwenByNode</a></p>
+<p>附赠Python代码 : <a href="https://github.com/MRmac1/gushiwenByPython" target="_blank" rel="external">https://github.com/MRmac1/gushiwenByPython</a></p>
 
       
     </div>
@@ -624,7 +617,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#网站的列表页结构如下"><span class="nav-number">1.</span> <span class="nav-text">网站的列表页结构如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站的详细页结构如下"><span class="nav-number">2.</span> <span class="nav-text">网站的详细页结构如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爬取思路分析"><span class="nav-number">3.</span> <span class="nav-text">爬取思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体代码的写法"><span class="nav-number">4.</span> <span class="nav-text">具体代码的写法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套回调方式"><span class="nav-number">4.1.</span> <span class="nav-text">嵌套回调方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用同步的方式写异步代码"><span class="nav-number">4.2.</span> <span class="nav-text">用同步的方式写异步代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来看看执行效率"><span class="nav-number">5.</span> <span class="nav-text">来看看执行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PHP代码"><span class="nav-number">5.1.</span> <span class="nav-text">PHP代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Node代码"><span class="nav-number">5.2.</span> <span class="nav-text">Node代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#网站的列表页结构如下"><span class="nav-number">1.</span> <span class="nav-text">网站的列表页结构如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网站的详细页结构如下"><span class="nav-number">2.</span> <span class="nav-text">网站的详细页结构如下</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#爬取思路分析"><span class="nav-number">3.</span> <span class="nav-text">爬取思路分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#具体代码的写法"><span class="nav-number">4.</span> <span class="nav-text">具体代码的写法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#嵌套回调方式"><span class="nav-number">4.1.</span> <span class="nav-text">嵌套回调方式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#用同步的方式写异步代码"><span class="nav-number">4.2.</span> <span class="nav-text">用同步的方式写异步代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#来看看执行效率"><span class="nav-number">5.</span> <span class="nav-text">来看看执行效率</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#PHP代码"><span class="nav-number">5.1.</span> <span class="nav-text">PHP代码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Node代码"><span class="nav-number">5.2.</span> <span class="nav-text">Node代码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码地址"><span class="nav-number">6.</span> <span class="nav-text">代码地址</span></a></li></ol></div>
             
           </div>
         </section>
