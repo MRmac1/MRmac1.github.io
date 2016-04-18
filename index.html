@@ -82,12 +82,12 @@
 
 <meta name="description" content="一个会写代码的历史爱好者的自言自语">
 <meta property="og:type" content="website">
-<meta property="og:title" content="blog by tracyzhou">
+<meta property="og:title" content="Blog By Tracyzhou">
 <meta property="og:url" content="http://mrmac1.github.io/index.html">
-<meta property="og:site_name" content="blog by tracyzhou">
+<meta property="og:site_name" content="Blog By Tracyzhou">
 <meta property="og:description" content="一个会写代码的历史爱好者的自言自语">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog by tracyzhou">
+<meta name="twitter:title" content="Blog By Tracyzhou">
 <meta name="twitter:description" content="一个会写代码的历史爱好者的自言自语">
 
 
@@ -106,7 +106,7 @@
   };
 </script>
 
-  <title> blog by tracyzhou </title>
+  <title> Blog By Tracyzhou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -148,7 +148,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">blog by tracyzhou</span>
+      <span class="site-title">Blog By Tracyzhou</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -268,6 +268,129 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/16/generatorPromise/" itemprop="url">
+                  从写一个Node爬虫开始讲用同步的方式写异步代码
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-16T20:13:23+08:00" content="2016-04-16">
+              2016-04-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/04/16/generatorPromise/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/16/generatorPromise/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>一般来说爬虫程序应该算是同步依赖性比较强的程序了,这篇文章就从爬取一个网站开始讲起吧,我个人对古代诗文比较感兴趣,就选取了古诗词网.</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/16/generatorPromise/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/13/babelNode/" itemprop="url">
                   es6转码器babel在node中的使用
                 </a>
@@ -340,10 +463,6 @@
 <blockquote>
 <p>现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,<br>但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.</p>
 </blockquote>
-<img src="/2016/04/13/babelNode/nodeNativeES6.gif" alt="nodeNativeES6.gif" title="">
-<p>先搭建好项目的骨骼框架,也可以之建一个文件夹.为了方便,我就直接在express项目下新建独立文件夹了</p>
-<p>结构大概是这样的,console是我新建的文件夹.下面我们就开始node-es6之旅了.</p>
-<img src="/images/babelNode/structure.png" width="350" height="450">
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/13/babelNode/#more" rel="contents">
               阅读全文 &raquo;
@@ -467,22 +586,6 @@
           <blockquote>
 <p>第一次听说爬虫是在我大学时期，那个时候因为没接触过，所以一直觉得爬虫是个挺神奇的东西。从我正式工作到现在已经两年整了，刚开始工作到现在，不间断的就会做各种小项目，期间也对爬虫有了更深一层次的认知。下面就自己这两年的积累，做下浅薄的总结，望各位看官勿见笑。</p>
 </blockquote>
-<img src="/2016/04/09/webSpider/spider.jpeg" alt="spider.jpeg" title="">
-<p>首先，我们认知一个事物需要从下面几方面入手。</p>
-<ul>
-<li>是什么？</li>
-<li>为什么？</li>
-<li>怎么做？</li>
-</ul>
-<p><strong>这篇文章，我会安装类似的方式来进行讲解。</strong></p>
-<ul>
-<li>爬虫是什么？</li>
-<li>爬虫能够做什么？</li>
-<li>我们怎么去做爬虫？</li>
-<li>各种方式做爬虫的优势和劣势</li>
-<li>让我们来动手做一个爬虫</li>
-<li>我们还需要做什么</li>
-</ul>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/09/webSpider/#more" rel="contents">
               阅读全文 &raquo;
@@ -606,13 +709,6 @@
           <blockquote>
 <p>前提概要：升级了下系统，开不了机。拿去苹果店，全盘格式化了系统，啥都木有了，勉强恢复过来一些个人资料。哭…<br>下面对系统的恢复过程做下总结，方便下次重(千)装(万)系(不)统(要)时候查看。</p>
 </blockquote>
-<h4 id="个人常用资料总结"><a href="#个人常用资料总结" class="headerlink" title="个人常用资料总结"></a>个人常用资料总结</h4><ul>
-<li>IED类：pycharm，webstorm，phpstorm，xcode(其中的commandLine工具很重要)</li>
-<li>设计类：sketch(UI交互设计)，sketch Toolbox(sketch的插件管理)，sip(拾色器)，principle(动画设计)，mindNode(思维导图)</li>
-<li>数据工具：Robomongo(mongodb查看)，sequel pro，DataGrip</li>
-<li>其他：Flux(屏幕色差自动调节，预防近视)</li>
-</ul>
-<hr>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/08/new-start-on-macos/#more" rel="contents">
               阅读全文 &raquo;
@@ -665,7 +761,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/04/08/hello-world/" itemprop="url">
+                <a class="post-title-link" href="/2016/04/07/hello-world/" itemprop="url">
                   Hello World
                 </a>
               
@@ -679,8 +775,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-08T11:23:49+08:00" content="2016-04-08">
-              2016-04-08
+            <time itemprop="dateCreated" datetime="2016-04-07T16:14:13+08:00" content="2016-04-07">
+              2016-04-07
             </time>
           </span>
 
@@ -690,8 +786,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/08/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/hello-world/" itemprop="commentsCount"></span>
+                <a href="/2016/04/07/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/07/hello-world/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -714,18 +810,12 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/07/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -793,7 +883,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -810,7 +900,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="node,babel,es6,javascript," />
+  <meta name="keywords" content="node,es6,javascript,babel," />
 
 
 
@@ -82,38 +82,26 @@
 
 <meta name="description" content="注: 以下babel版本是基于babel6
 
-现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.
-
-
-先搭建好项目的骨骼框架,也可以之建一个文件夹.为了方便,我就直接在express项目下新建独立文件夹了
-结构大概是这样的,console是我新建的文件夹.下面">
+现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="es6转码器babel在node中的使用">
 <meta property="og:url" content="http://mrmac1.github.io/2016/04/13/babelNode/index.html">
-<meta property="og:site_name" content="blog by tracyzhou">
+<meta property="og:site_name" content="Blog By Tracyzhou">
 <meta property="og:description" content="注: 以下babel版本是基于babel6
 
-现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.
-
-
-先搭建好项目的骨骼框架,也可以之建一个文件夹.为了方便,我就直接在express项目下新建独立文件夹了
-结构大概是这样的,console是我新建的文件夹.下面">
+现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.">
 <meta property="og:image" content="http://mrmac1.github.io/2016/04/13/babelNode/nodeNativeES6.gif">
 <meta property="og:image" content="http://mrmac1.github.io/images/babelNode/structure.png">
 <meta property="og:image" content="http://mrmac1.github.io/images/babelNode/ES6error.png">
 <meta property="og:image" content="http://mrmac1.github.io/2016/04/13/babelNode/GenerateCode.gif">
 <meta property="og:image" content="http://mrmac1.github.io/images/babelNode/stillGotError.png">
 <meta property="og:image" content="http://mrmac1.github.io/2016/04/13/babelNode/GeneratorTest.gif">
-<meta property="og:updated_time" content="2016-04-13T05:23:32.000Z">
+<meta property="og:updated_time" content="2016-04-18T06:23:54.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="es6转码器babel在node中的使用">
 <meta name="twitter:description" content="注: 以下babel版本是基于babel6
 
-现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.
-
-
-先搭建好项目的骨骼框架,也可以之建一个文件夹.为了方便,我就直接在express项目下新建独立文件夹了
-结构大概是这样的,console是我新建的文件夹.下面">
+现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.">
 <meta name="twitter:image" content="http://mrmac1.github.io/2016/04/13/babelNode/nodeNativeES6.gif">
 
 
@@ -132,7 +120,7 @@
   };
 </script>
 
-  <title> es6转码器babel在node中的使用 | blog by tracyzhou </title>
+  <title> es6转码器babel在node中的使用 | Blog By Tracyzhou </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -172,7 +160,7 @@
   <div class="custom-logo-site-title">
     <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <span class="site-title">blog by tracyzhou</span>
+      <span class="site-title">Blog By Tracyzhou</span>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -360,11 +348,11 @@
 <blockquote>
 <p>现在node4.0+版本和node5.0+版本都支持不少的es6特性,比如下面使用的es6的函数扩展,<br>但是要使用完全的es6特性目前就显得有点力不从心了.这时候就需要使用babel转码器了.</p>
 </blockquote>
+ <a id="more"></a>
 <img src="/2016/04/13/babelNode/nodeNativeES6.gif" alt="nodeNativeES6.gif" title="">
 <p>先搭建好项目的骨骼框架,也可以之建一个文件夹.为了方便,我就直接在express项目下新建独立文件夹了</p>
 <p>结构大概是这样的,console是我新建的文件夹.下面我们就开始node-es6之旅了.</p>
 <img src="/images/babelNode/structure.png" width="350" height="450">
-<a id="more"></a>
 <p>在console文件夹下新建一个测试文件es6.js<br><figure class="highlight javascript"><figcaption><span>es6.js</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>* <span class="title">jsRocksIsAwesome</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"JS Rocks is Awesome"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"JS Rocks says JavaScript Rocks"</span>;</span><br><span class="line">    <span class="keyword">yield</span> <span class="string">"Hello man"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"because JavaScript really rocks"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> jsRocks = jsRocksIsAwesome();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(jsRocks.next());</span><br><span class="line"><span class="built_in">console</span>.log(jsRocks.next());</span><br><span class="line"><span class="built_in">console</span>.log(jsRocks.next());</span><br></pre></td></tr></table></figure></p>
 <p>文件使用了ES6语法,正常情况下执行node es6.js会报语法错误<br><img src="/images/babelNode/ES6error.png" width="350" height="450"></p>
 <h4 id="首先安装babel-cli工具"><a href="#首先安装babel-cli工具" class="headerlink" title="首先安装babel-cli工具"></a>首先安装babel-cli工具</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install --save-dev babel-cli</span><br></pre></td></tr></table></figure>
@@ -414,11 +402,11 @@
           
             <a href="/tags/node/" rel="tag">#node</a>
           
-            <a href="/tags/babel/" rel="tag">#babel</a>
-          
             <a href="/tags/es6/" rel="tag">#es6</a>
           
             <a href="/tags/javascript/" rel="tag">#javascript</a>
+          
+            <a href="/tags/babel/" rel="tag">#babel</a>
           
         </div>
       
@@ -434,6 +422,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/16/generatorPromise/" rel="prev" title="从写一个Node爬虫开始讲用同步的方式写异步代码">
+                从写一个Node爬虫开始讲用同步的方式写异步代码 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -528,7 +520,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -545,7 +537,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
